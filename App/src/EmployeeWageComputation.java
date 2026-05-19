@@ -10,12 +10,19 @@ public class EmployeeWageComputation {
 
         int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 
-        if (empCheck == IS_PART_TIME)
-            empHours = 4;
-        else if (empCheck == IS_FULL_TIME)
-            empHours = 8;
-        else
-            empHours = 0;
+        switch (empCheck) {
+
+            case IS_PART_TIME:
+                empHours = 4;
+                break;
+
+            case IS_FULL_TIME:
+                empHours = 8;
+                break;
+
+            default:
+                empHours = 0;
+        }
 
         int empWage = empHours * EMP_RATE_PER_HOUR;
 
