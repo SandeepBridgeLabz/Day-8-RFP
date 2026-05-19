@@ -1,18 +1,24 @@
 public class EmployeeWageComputation {
 
+    public static final int IS_PART_TIME = 1;
+    public static final int IS_FULL_TIME = 2;
+    public static final int EMP_RATE_PER_HOUR = 20;
+
     public static void main(String[] args) {
 
-        int IS_PRESENT = 1;
-        int EMP_RATE_PER_HOUR = 20;
-        int EMP_HOURS = 8;
+        int empHours = 0;
 
-        double empCheck = Math.floor(Math.random() * 10) % 2;
+        int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 
-        if (empCheck == IS_PRESENT) {
-            int salary = EMP_HOURS * EMP_RATE_PER_HOUR;
-            System.out.println("Employee Wage : " + salary);
-        } else {
-            System.out.println("Employee is Absent");
-        }
+        if (empCheck == IS_PART_TIME)
+            empHours = 4;
+        else if (empCheck == IS_FULL_TIME)
+            empHours = 8;
+        else
+            empHours = 0;
+
+        int empWage = empHours * EMP_RATE_PER_HOUR;
+
+        System.out.println("Employee Wage : " + empWage);
     }
 }
